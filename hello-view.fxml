@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="400.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.texteditor.SceneController">
+   <children>
+      <MenuBar fx:id="menu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="820.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="saveButton" mnemonicParsing="false" onAction="#onSave" text="Save" />
+                  <MenuItem fx:id="myNew" mnemonicParsing="false" onAction="#onNew" text="New" />
+                  <MenuItem fx:id="myClose" mnemonicParsing="false" onAction="#onClose" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onRedoClick" text="Redo" />
+                  <MenuItem mnemonicParsing="false" onAction="#onUndoClick" text="Undo" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Style">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="Change font">
+                     <graphic>
+                        <ChoiceBox fx:id="myFontStyle" onMouseClicked="#onChangeFontStyle" prefWidth="150.0">
+                           <effect>
+                              <Blend mode="LIGHTEN" />
+                           </effect>
+                        </ChoiceBox>
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Change size">
+                     <graphic>
+                        <ChoiceBox fx:id="myFontSize" prefWidth="150.0">
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </ChoiceBox>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Change font color">
+                     <graphic>
+                        <ChoiceBox fx:id="myColor" onMouseClicked="#onChangeFontColor" prefWidth="150.0" />
+                     </graphic>
+                  </MenuItem>
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="textArea" layoutY="32.0" prefHeight="388.0" prefWidth="820.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+         <font>
+            <Font size="16.0" />
+         </font></TextArea>
+   </children>
+</AnchorPane>
